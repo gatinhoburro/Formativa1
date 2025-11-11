@@ -1,0 +1,1 @@
+criar um jogo que pede ao usuário um palpite sobre um número secreto, gerado aleatoriamente. O total de tentativas de acerto são contadas a cada jogada e o jogo ainda dá dicas se o usuário está perto ou não de adivinhar o número.
