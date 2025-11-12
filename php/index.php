@@ -9,7 +9,6 @@ if (isset($_POST["numero"])) {
 }
 ?>
 <?php
-// para reiniciar o jogo
 if (isset($_POST["reiniciar"])) {
     unset($_SESSION["numeroAleatorio"]);
     unset($_SESSION["tentativas"]);
