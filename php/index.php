@@ -1,41 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="shortcut icon" href="/icon/favicon.ico" type="image/x-icon">
-    <title>Jogo de adivinhação</title>
-</head>
-
-<body>
-    <?php
-    session_start();
-    if (isset($_POST["numero"])) {
-        if (!isset($_SESSION["tentativas"])) {
-            $_SESSION["tentativas"] = 0;
-        }
-        $tentativas = $_SESSION["tentativas"]++;
-        echo "<strong>{$_SESSION["tentativas"]} tentativas</strong>";
+<?php
+session_start();
+if (isset($_POST["numero"])) {
+    if (!isset($_SESSION["tentativas"])) {
+        $_SESSION["tentativas"] = 0;
     }
-    ?>
-
-    <main>
-        <p>Adivinhe o numero que estou pensando entre 1...100</p>
-        <p id="tentativas"></p>
-        <form action="index.php" method="post">
-            <label for="numero">Numero:</label>
-            <input type="number" name="numero">
-            <input type="submit" value="Enviar">
-        </form>
-        <form method="post">
-            <button type="submit" name="reiniciar">Reiniciar</button>
-        </form>
-    </main>
-</body>
-
-</html>
+    $tentativas = $_SESSION["tentativas"]++;
+    echo "<strong>{$_SESSION["tentativas"]} tentativas</strong>";
+}
+?>
 <?php
 // para reiniciar o jogo
 if (isset($_POST["reiniciar"])) {
@@ -61,3 +33,30 @@ if ($numeroUsuario < $numeroAleatorio) {
 }
 
 ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href=./icon/favicon.ico" type="image/x-icon">
+    <title>Jogo de adivinhação</title>
+</head>
+
+<body>
+    <main>
+        <p>Adivinhe o numero que estou pensando entre 1...100</p>
+        <p id="tentativas"></p>
+        <form action="index.php" method="post">
+            <label for="numero">Numero:</label>
+            <input type="number" name="numero">
+            <input type="submit" value="Enviar">
+        </form>
+        <form method="post">
+            <button type="submit" name="reiniciar">Reiniciar</button>
+        </form>
+    </main>
+</body>
+
+</html>

@@ -1,87 +1,121 @@
-    body {
-        font-family: "Segoe UI", Roboto, sans-serif;
-        background-color: #f7f7f7;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        margin: 0;
-        color: #333;
-    }
+body {
+    font-family: "Segoe UI", Roboto, sans-serif;
+    background-color: #f7f7f7;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    color: #333;
+}
 
-    main{
-        justify-content: center;
-        align-items: center;
-    }
-    h1 {
-        color: #2c3e50;
-        font-size: 1.8rem;
-        margin-bottom: 0.5rem;
-    }
+main {
+    text-align: center; 
+    max-width: 300px; 
+    padding: 20px;
+}
 
-    p {
-        margin-bottom: 1rem;
-    }
+h1 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
 
-    form {
-        background: white;
-        padding: 1.5rem 2rem;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        margin-bottom: 1rem;
-        width: 260px;
-        text-align: center;
-    }
+p {
+    margin-bottom: 1rem;
+}
 
-    label {
-        display: block;
-        margin-bottom: 0.5rem;
-        font-weight: 500;
-    }
+form {
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    margin: 1rem auto; 
+    width: 260px;
+    text-align: left; 
+}
 
-    input[type="number"] {
-        width: 100%;
-        padding: 0.5rem;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 1rem;
-        margin-bottom: 1rem;
-        outline: none;
-        transition: border-color 0.2s;
-    }
 
-    input[type="number"]:focus {
-        border-color: #3498db;
-    }
+form:last-child {
+    text-align: center;
+    padding: 1rem 2rem; 
+}
 
-    input[type="submit"],
-    button {
-        background-color: #3498db;
-        color: white;
-        border: none;
-        padding: 0.6rem 1rem;
-        border-radius: 6px;
-        cursor: pointer;
-        font-size: 1rem;
-        transition: background 0.2s;
-    }
 
-    input[type="submit"]:hover,
-    button:hover {
-        background-color: #2980b9;
-    }
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
 
-    button[name="reiniciar"] {
-        background-color: #e74c3c;
-    }
+input[type="number"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+    text-align: center; 
+}
 
-    button[name="reiniciar"]:hover {
-        background-color: #c0392b;
-    }
+input[type="number"]:focus {
+    border-color: #3498db;
+}
 
-    .resultado {
-        font-size: 1.2rem;
-        margin-top: 1rem;
-        text-align: center;
-    }
+input[type="submit"],
+button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s;
+    width: 100%; 
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #2980b9;
+}
+
+button[name="reiniciar"] {
+    background-color: #e74c3c;
+    width: auto; /* Deixa o botão Reiniciar do tamanho do conteúdo */
+}
+
+button[name="reiniciar"]:hover {
+    background-color: #c0392b;
+}
+
+p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+p:contains("Acertou") {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+p:not(:contains("Acertou")) {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+main > p:first-child,
+#tentativas {
+    background: none;
+    border: none;
+    color: #333;
+    font-weight: 400;
+    padding: 0;
+}
