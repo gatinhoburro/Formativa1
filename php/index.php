@@ -11,10 +11,19 @@
 
 <body>
     <?php
-    session_start()
+    session_start();
+    if (isset($_POST["numero"])) {
+        if (!isset($_SESSION["tentativas"])) {
+            $_SESSION["tentativas"] = 0;
+        }
+        $tentativas = $_SESSION["tentativas"]++;
+        echo "<strong>{$_SESSION["tentativas"]} tentativas</strong>";
+    }
     ?>
+
     <main>
         <p>Adivinhe o numero que estou pensando entre 1...100</p>
+        <p id="tentativas"></p>
         <form action="index.php" method="post">
             <label for="numero">Numero:</label>
             <input type="number" name="numero">
@@ -31,6 +40,7 @@
 // para reiniciar o jogo
 if (isset($_POST["reiniciar"])) {
     unset($_SESSION["numeroAleatorio"]);
+    unset($_SESSION["tentativas"]);
     $_SESSION["numeroAleatorio"] = rand(1, 100);
 }
 if (!isset($_SESSION["numeroAleatorio"])) {
@@ -49,4 +59,5 @@ if ($numeroUsuario < $numeroAleatorio) {
 } elseif ($numeroUsuario > $numeroAleatorio) {
     echo "<p>o numero é Menor que $numeroUsuario</p>";
 }
+
 ?>
